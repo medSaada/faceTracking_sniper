@@ -35,7 +35,7 @@ else:
         # Clear the plot and plot the updated speed values
         ax2.clear()
         ax2.plot(speed_values, color='red', linestyle='-', linewidth=1.5)  # Red curve
-        ax2.set_title('Speed Output Variation', color='white', fontsize=14,fontweight='bold')  # Title with larger font and bold
+        ax2.set_title('Speed Output Variation', color='white', fontsize=14,fontweight='bold', y=2.2)  # Title with larger font and bold
         ax2.set_xlabel('Time', color='white', fontsize=10)  # X-axis label with larger font
         ax2.set_ylabel('Speed', color='white', fontsize=10)  # Y-axis label with larger font
         ax2.set_ylim(-100, 100)
