@@ -2,7 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 
-def FaceDetection(img):
+def FaceDetection(img,screenWidth,screenHight):
     imgGrayScale=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     print('imagegrayscale')
     faceCascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
@@ -15,12 +15,21 @@ def FaceDetection(img):
     faceArea=[]
     for (x,y,w,h) in DophinoTechfaces:
         #it draw only horizental or vertcical rectangles
-        label = "Mohamed Amine SAADA"
+       # label = "Mohamed Amine SAADA"
+        label = ("ALI ACHIBANE"
+                 "")
+
         label_position = (x, y - 10)
-
         cv2.putText(img, label, label_position, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (36, 255, 12), 2)
+        cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),2)
+        cv2.line(img,(0,y+w//2),(x,y+w//2) , (0,0,255), 2)
+        cv2.line(img, (x+w,y+w//2),(screenWidth,y+w//2), (0,0,255), 2)
+        cv2.line(img, (x+w//2,0), (x+w//2,y), (0,0,255), 2)
+        cv2.line(img,  (x+w//2,y+h//2), (x+w//2,screenHight), (0,0,255), 2)
 
-        cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2,)
+
+
+
         centerx=x+(w//2)
         centery=y+h//2
         area=w*h

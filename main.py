@@ -28,7 +28,7 @@ else:
     while True:
         ret, frame = cap.read()
         frame = cv2.resize(frame, (w, h))
-        frame,infos=FaceDetection(frame)
+        frame,infos=FaceDetection(frame,w,h)
         errorPidPrecedent,speed = faceTracking(infos, PID, w, h, errorPidPrecedent)
         speed_values.append(speed)
 
